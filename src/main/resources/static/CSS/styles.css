@@ -1,4 +1,33 @@
-body {
-    background-image: ;
-}
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
+body {
+    background-image: url(/src/main/resources/static/images/cars-unsplash.jpg);
+    background-size: cover;
+    /* opacity: .4; */
+    /* width: 100% 100%; */
+    
+}
+h1 {
+    color: white;
+    background-color: black;
+    background-size: 300px;
+    /* opacity: 1; */
+    /* background-size: 100%; */
+}
+h2 {
+    color: white;
+    background-color: black;
+}
+h2 ul {
+    color: white;
+    background-color: black;
+}
+a {
+    color: white;
+    background-color: black; 
+}
