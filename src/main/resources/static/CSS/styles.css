@@ -9,38 +9,61 @@ body {
     background-image: url(/src/main/resources/static/images/cars-unsplash.jpg);
     background-size: 100%;
     background-attachment: fixed;
-    /* opacity: .4; */
-    /* width: 100% 100%; */
-    
+    font-family: 'Oswald', sans-serif;
+}
+body.porsche {
+    background-image: url(/src/main/resources/static/images/2020-porsche-911.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+}
+body.corvette {
+    background-image: url(/src/main/resources/static/images/corvette.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+}
+body.range-rover {
+    background-image: url(/src/main/resources/static/images/Range-Rover.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+}
+body.pilot {
+    background-image: url(/src/main/resources/static/images/2020-Honda-Pilot.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
 }
 
 .container {
     background-color: rgba(0, 0, 0, .4);
     height: 100%;
+    width: 100%;
+    margin: 0;
+    
 }
 h1 {
     color: white;
-    /* background-color: black; */
     background-size: 300px;
-    /* opacity: 1; */
-    /* background-size: 100%; */
+   
 }
 h2 {
     color: white;
-    /* background-color: black; */
+    
 }
 h2 ul {
     color: white;
-    /* background-color: black; */
+   
 }
 a {
     color: white;
-    /* background-color: black;  */
+   
 }
 
 h3 {
     color: white;
-    /* background-color: black; */
+    
 }
 p {
     color: white;
@@ -48,5 +71,11 @@ p {
     margin-right: 50%;
     text-align: left;
     text-justify: auto;    
-    /* background-color: black;  */
+    
+}
+
+ul {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: x-large;
 }
