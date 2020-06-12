@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard-Warriors Car Reviews</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/styles.css" type="text/css" />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Keyboard-Warriors Car Reviews</h1>
+        <a href="./index.html">Home</a>
+    </header>
+    <h2 th:text="${review.make} + ' ' + ${review.model} + ' Review'">Honda Pilot Review</h2>
+    <h3 th:text="'Year: ' + ${review.year}">Year: 2020</h3>
+    <h3 th:text="'Make: ' + ${review.make}">Make: Honda</h3>
+    <h3 th:text="'Model: ' + ${review.model}">Model: Pilot</h3>
+    <h3 th:text="'Hashtag: ' + ${review.hashtag}">Hashtag: <a href="./family-car.html">#familycar</a></h3>
+    <p th:text="${review.review}">
+        You have more choices than ever for a three-row midsize SUV, yet the
+        Honda Pilot, a mainstay of the class, remains one of the best choices
+        available. You'll enjoy roomy seating for up to eight, a quiet interior
+        and a comfortable ride quality. The plush accommodations don't come at
+        the expense of performance either since the Pilot is surprisingly
+        capable when driven on twisty roads. And while we're not totally
+        enamored with the optional nine-speed automatic transmission, there's no
+        doubt the standard V6 has plenty of power to move this large crossover.
+    </p>
+</div>
+</body>
+</html>
