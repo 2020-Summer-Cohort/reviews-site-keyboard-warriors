@@ -18,8 +18,8 @@
         <a href="./index.html">Home</a>
     </header>
     <h2 th:text="${category.name}">SUVs</h2>
-    <ul th:each="review: ${category.reviews}" >
-        <li th:text="${review.model}"><a href="./honda-pilot-review.html">Honda Pilot Review</a></li>
+    <ul>
+        <li th:each="review: ${category.reviews}"> <a th:text="${review.model}" th:href="@{/reviews/${review.model}}">Honda Pilot Review</a></li>
         <li><a href="./range-rover-review.html">Range Rover Review</a></li>
     </ul>
 </div>
