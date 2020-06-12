@@ -21,4 +21,5 @@ public class CategoryController {
       model.addAttribute("category", categoryStorage.findCategoryByName(categoryName));
       return "category-template";
   }
+
 }

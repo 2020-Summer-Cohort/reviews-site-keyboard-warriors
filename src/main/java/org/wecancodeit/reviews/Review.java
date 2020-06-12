@@ -4,15 +4,13 @@ public class Review {
     private String make;
     private String model;
     private int year;
-    private String hashtag;
     private String review;
     private String backGroundPic;
 
-    public Review(String make, String model, int year, String hashtag, String review, String backGroundPic) {
+    public Review(String make, String model, int year, String review, String backGroundPic) {
         this.make = make;
         this.model = model;
         this.year = year;
-        this.hashtag = hashtag;
         this.review = review;
         this.backGroundPic = backGroundPic;
     }
@@ -27,10 +25,6 @@ public class Review {
 
     public int getYear() {
         return year;
-    }
-
-    public String getHashtag() {
-        return hashtag;
     }
 
     public String getReview() {

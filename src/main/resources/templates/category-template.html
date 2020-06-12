@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Keyboard-Warriors Car Reviews</title>
     <link
             href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="./CSS/styles.css" type="text/css" />
+    <link rel="stylesheet" href="./CSS/styles.css" type="text/css"/>
 </head>
 <body>
 <div class="container">
@@ -19,7 +19,8 @@
     </header>
     <h2 th:text="${category.name}">SUVs</h2>
     <ul>
-        <li th:each="review: ${category.reviews}"> <a th:text="${review.model}" th:href="@{/reviews/${review.model}}">Honda Pilot Review</a></li>
+        <li th:each="review: ${category.reviews}"><a th:text="${review.model}" th:href="@{/reviews/${review.model}}">Honda
+            Pilot Review</a></li>
         <li><a href="./range-rover-review.html">Range Rover Review</a></li>
     </ul>
 </div>

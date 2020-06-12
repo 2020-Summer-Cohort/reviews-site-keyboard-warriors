@@ -8,7 +8,7 @@ import java.util.Map;
 public class ReviewStorage {
     Map<String, Review> reviews = new HashMap<>();
     public ReviewStorage() {
-        reviews.put("2020 Honda Pilot", new Review("Honda", "Pilot", 2020, "Family Car", "You have more choices than ever for a three-row midsize SUV, yet the\n" +
+        reviews.put("2020 Honda Pilot", new Review("Honda", "Pilot", 2020, "You have more choices than ever for a three-row midsize SUV, yet the\n" +
                 "        Honda Pilot, a mainstay of the class, remains one of the best choices\n" +
                 "        available. You'll enjoy roomy seating for up to eight, a quiet interior\n" +
                 "        and a comfortable ride quality. The plush accommodations don't come at\n" +
@@ -17,7 +17,7 @@ public class ReviewStorage {
                 "        enamored with the optional nine-speed automatic transmission, there's no\n" +
                 "        doubt the standard V6 has plenty of power to move this large crossover.", "/src/main/resources/static/images/2020-Honda-Pilot.jpg"));
 
-        reviews.put("2020 Range Rover",new Review("Land Rover", "Range Rover", 2020, "", "Automakers typically redesign their vehicles every five to six years.\n" +
+        reviews.put("2020 Range Rover",new Review("Land Rover", "Range Rover", 2020, "Automakers typically redesign their vehicles every five to six years.\n" +
                 "        But push the life cycle longer, and they run the risk of having an\n" +
                 "        overly dated product. Land Rover hasn't fully redesigned its Range Rover\n" +
                 "        Sport since the 2014 model year. Compared to some newer luxury SUVs\n" +
