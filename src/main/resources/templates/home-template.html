@@ -14,10 +14,9 @@
 <body>
 <div class="container">
     <h1>Keyboard-Warriors Car Reviews</h1>
-    <p>Template</p>
     <h2>Car Categories</h2>
-    <ul>
-        <li th:each="category: ${categories}"> <a th:text= "${category.name}" th:href="@{'/categories/'+${category.name}}">Range Rover Review</a><li>
+    <ul th:each="category: ${categories}">
+        <li> <a th:text= "${category.name}" th:href="@{'/categories/'+${category.name}}">Range Rover Review</a></li>
     </ul>
     <h2>Hashtags</h2>
     <ul>

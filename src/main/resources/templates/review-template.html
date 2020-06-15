@@ -9,13 +9,13 @@
             href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="./CSS/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../CSS/styles.css" type="text/css" />
 </head>
-<body>
+<body th:class="${review.backGroundPic}">
 <div class="container">
     <header>
         <h1>Keyboard-Warriors Car Reviews</h1>
-        <a href="./index-prototype.html">Home</a>
+        <a href="/">Home</a>
     </header>
     <h2 th:text="${review.make} + ' ' + ${review.model} + ' Review'">Honda Pilot Review</h2>
     <h3 th:text="'Year: ' + ${review.year}">Year: 2020</h3>

@@ -32,6 +32,33 @@ public class CategoryStorage {
                 "        engine. This engine, thanks to a mild hybrid system, is more\n" +
                 "        fuel-efficient while still maintaining a robust amount of power.", "/src/main/resources/static/images/Range-Rover.jpg");
         categories.put("SUV", new Category("SUV", new ArrayList<>(List.of(review1, review2))));
+        Review review3 = new Review("Porsche", "911", 2020, "Although the 2020 Porsche 911 kicks off a new generation — code-named\n" +
+                "        992 — it isn't wildly different from its 991 predecessor. If you want\n" +
+                "        that from your next sports car, Chevrolet will be happy to sell you a\n" +
+                "        mid-engine C8 Corvette. But the redesigned 2020 911 is more than up to\n" +
+                "        the challenge of subtly evolving Porsche's rear-engine icon. This new\n" +
+                "        911 picks up right where the old model left off by pairing\n" +
+                "        supercar-adjacent performance with everyday drivability. For now,\n" +
+                "        Porsche is offering just the Carrera and Carrera S versions, plus the\n" +
+                "        all-wheel-drive 4 and 4S versions. Engine horsepower is up slightly, and\n" +
+                "        the PDK automatic transmission now sports an extra gear. Bored with the\n" +
+                "        idea of just a \"regular\" Carrera? Just as the sun sets in the west, you\n" +
+                "        can bet that Porsche has its typical buffet of Turbos and GT3s queued up\n" +
+                "        in the pipeline for future model years.", "porsche");
+        Review review4 = new Review("Chevrolet", "Corvette", 2020, "For 2020, the Corvette has undergone the most radical redesign in its\n" +
+                "        67-year history. Believing that they had squeezed every ounce of\n" +
+                "        performance they could from the Corvette's classic front-engine and\n" +
+                "        rear-drive layout, Chevrolet's engineers decided a new mid-engine layout\n" +
+                "        was the way to go for its inherent advantages in weight distribution.\n" +
+                "        Risky? Yes. But the result is hugely impressive. In terms of\n" +
+                "        performance, the Corvette equals or outshines cars costing twice to\n" +
+                "        three times as much. The new 6.2-liter V8 and dual-clutch automatic\n" +
+                "        transmission are a formidable combo on the track but offer plenty of\n" +
+                "        oomph and smooth operation in nearly any condition. The 2020 Corvette\n" +
+                "        also imparts more information about its handling balance and grip,\n" +
+                "        thereby giving its driver more confidence in taking the car up to its\n" +
+                "        handling limits.", "corvette");
+        categories.put("Sports Cars", new Category("Sports Cars",new ArrayList<>(List.of(review3, review4))));
     }
 
     public Category findCategoryByName(String categoryName) {
