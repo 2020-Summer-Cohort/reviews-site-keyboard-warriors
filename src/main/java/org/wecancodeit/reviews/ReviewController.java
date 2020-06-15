@@ -16,7 +16,7 @@ public class ReviewController {
         this.reviewStorage = reviewStorage;
     }
 
-    @RequestMapping("/reviews/{reviewName}")
+    @RequestMapping("reviews/{reviewName}")
     public String showSingleReview(@PathVariable String reviewName, Model model) {
         model.addAttribute("review", reviewStorage.findReviewByTitle(reviewName));
         return "review-template";

@@ -1,18 +1,20 @@
 package org.wecancodeit.reviews;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-public class IndexController {
+@Controller
+public class HomeController {
     CategoryStorage categoryStorage;
 
-    public IndexController(CategoryStorage categoryStorage) {
+    public HomeController(CategoryStorage categoryStorage) {
+
         this.categoryStorage = categoryStorage;
     }
 
-    @RequestMapping("index")
+    @RequestMapping("")
     public String showAllCategories (Model model) {
         model.addAttribute("categories",categoryStorage.findAllCategories());
-        return "index-template";
+        return "home-template";
     }
 }

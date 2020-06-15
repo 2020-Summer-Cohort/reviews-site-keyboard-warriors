@@ -15,13 +15,12 @@
 <div class="container">
     <header>
         <h1>Keyboard-Warriors Car Reviews</h1>
-        <a href="./index.html">Home</a>
+        <a href="./index-prototype.html">Home</a>
     </header>
     <h2 th:text="${review.make} + ' ' + ${review.model} + ' Review'">Honda Pilot Review</h2>
     <h3 th:text="'Year: ' + ${review.year}">Year: 2020</h3>
     <h3 th:text="'Make: ' + ${review.make}">Make: Honda</h3>
     <h3 th:text="'Model: ' + ${review.model}">Model: Pilot</h3>
-    <h3 th:text="'Hashtag: ' + ${review.hashtag}">Hashtag: <a href="./family-car.html">#familycar</a></h3>
     <p th:text="${review.review}">
         You have more choices than ever for a three-row midsize SUV, yet the
         Honda Pilot, a mainstay of the class, remains one of the best choices

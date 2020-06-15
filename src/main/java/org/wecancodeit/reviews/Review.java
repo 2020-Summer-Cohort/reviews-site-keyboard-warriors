@@ -20,18 +20,22 @@ public class Review {
     }
 
     public String getModel() {
+
         return model;
     }
 
     public int getYear() {
+
         return year;
     }
 
     public String getReview() {
+
         return review;
     }
 
     public String getBackGroundPic() {
+
         return backGroundPic;
     }
 }
