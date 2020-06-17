@@ -2,27 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Keyboard-Warriors Car Reviews</title>
     <link
             href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="./CSS/styles.css" type="text/css" />
+    <link rel="stylesheet" href="./CSS/styles.css" type="text/css"/>
 </head>
 <body>
 <div class="container">
     <h1>Keyboard-Warriors Car Reviews</h1>
     <h2>Car Categories</h2>
     <ul th:each="category: ${categories}">
-        <li> <a th:text= "${category.name}" th:href="@{'/categories/'+${category.name}}">Range Rover Review</a></li>
+        <li><a th:text="${category.name}" th:href="@{'/categories/'+${category.name}}">Range Rover Review</a></li>
     </ul>
-    <h2>Hashtags</h2>
-    <ul>
-        <li><a href="./fast.html">#fast</a></li>
-        <li><a href="./family-car.html">#familycar</a></li>
-    </ul>
+    <h2> <a href="/hashtags">Hashtags</a></h2>
 </div>
 </body>
 </html>

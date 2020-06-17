@@ -17,9 +17,9 @@
         <h1>Keyboard-Warriors Car Reviews</h1>
         <a href="/">Home</a>
     </header>
-    <h2 th:text="${category.name}">SUVs</h2>
-    <ul th:each="review: ${category.reviews}">
-        <li><a th:text="${review.year} + ' ' + ${review.make} + ' ' +  ${review.model} + ' Review'" th:href="@{'/reviews/'+ ${review.make}}">Honda
+    <h2>Hashtags: </h2>
+    <ul th:each="hashtag: ${hashtags}">
+        <li><a th:text="'#' + ${hashtag.hashtagName}" th:href="@{'/hashtags/'+ ${hashtag.hashtagName}}">Honda
             Pilot Review</a></li>
     </ul>
 </div>

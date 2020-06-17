@@ -21,6 +21,12 @@
     <h3 th:text="'Year: ' + ${review.year}">Year: 2020</h3>
     <h3 th:text="'Make: ' + ${review.make}">Make: Honda</h3>
     <h3 th:text="'Model: ' + ${review.model}">Model: Pilot</h3>
+    <h3>Hashtags: </h3>
+    <ul>
+        <li th:each="hashtag: ${review.hashtags}">
+            <a th:text="'#' + ${hashtag.hashtagName}" th:href="@{'/hashtags/' + ${hashtag.hashtagName}}"></a>
+        </li>
+    </ul>
     <p th:text="${review.review}">
         You have more choices than ever for a three-row midsize SUV, yet the
         Honda Pilot, a mainstay of the class, remains one of the best choices
