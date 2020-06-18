@@ -79,3 +79,13 @@ ul {
     font-weight: 600;
     font-size: x-large;
 }
+
+label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: large;
+    color: white;
+}
+.btn{
+    margin-top: 10px;
+}

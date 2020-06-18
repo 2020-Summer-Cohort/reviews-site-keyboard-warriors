@@ -22,6 +22,27 @@
         <li><a th:text="${review.year} + ' ' + ${review.make} + ' ' +  ${review.model} + ' Review'" th:href="@{'/reviews/'+ ${review.make}}">Honda
             Pilot Review</a></li>
     </ul>
+    <form action="review/add" method="POST" class="new-review-form">
+        <label for="new-review__title-input" class="form__label">Review Title</label>
+        <input type="text" name="reviewTitle" id="new-review__title-input">
+        <br>
+        <label for="new-review__year-input" class="form__label">Year</label>
+        <input type="text" name="year" id="new-review__year-input">
+        <br>
+        <label for="new-review__make-input" class="form__label">Make</label>
+        <input type="text" name="make" id="new-review__make-input">
+        <br>
+        <label for="new-review__model-input" class="form__label">Model</label>
+        <input type="text" name="model" id="new-review__model-input">
+        <br>
+        <label for="new-review__hashtag-input" class="form__label">Hashtag</label>
+        <input type="text" name="hashtag" id="new-review__hashtag-input">
+        <br>
+        <label for="new-review__body-input" class="form__label">Review</label>
+        <input type="text" name="reviewBody" id="new-review__body-input">
+        <br>
+        <button class="btn" type="submit">Submit</button>
+    </form>
 </div>
 </body>
 </html>
