@@ -23,11 +23,10 @@ public class Populator implements CommandLineRunner {
         Hashtag familyCar = new Hashtag("FamilyCar");
         hashtagRepo.save(familyCar);
         hashtagRepo.save(fast);
-        Review review1 = new Review("Honda", "Pilot", 2020, "You have more choices than ever for a three-row midsize SUV", "pilot", suv, familyCar);
-
-        Review review2 = new Review("Land Rover", "Range Rover", 2020, "Automakers typically redesign their vehicles every five to six years.", "range-rover", suv);
-        Review review3 = new Review("Chevrolet", "Corvette", 2020, "For 2020, the Corvette has undergone the most radical redesign", "corvette", sportsCar);
-        Review review4 = new Review("Porsche", "911", 2020, "Although the 2020 Porsche 911 kicks off a new generation", "porsche", sportsCar, fast);
+        Review review1 = new Review("Honda", "Pilot", 2020, "You have more choices than ever for a three-row midsize SUV", "../images/2020-Honda-Pilot.jpg", suv, familyCar);
+        Review review2 = new Review("Land Rover", "Range Rover", 2020, "Automakers typically redesign their vehicles every five to six years.", "../images/Range-Rover.jpg", suv);
+        Review review3 = new Review("Chevrolet", "Corvette", 2020, "For 2020, the Corvette has undergone the most radical redesign", "../images/corvette.jpg", sportsCar);
+        Review review4 = new Review("Porsche", "911", 2020, "Although the 2020 Porsche 911 kicks off a new generation", "../images/2020-porsche-911.jpg", sportsCar, fast);
         reviewRepo.save(review1);
         reviewRepo.save(review2);
         reviewRepo.save(review3);

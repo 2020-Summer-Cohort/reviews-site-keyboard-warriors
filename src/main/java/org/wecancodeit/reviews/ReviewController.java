@@ -31,7 +31,7 @@ public class ReviewController {
     public String addReview(String make, String model, int year,  String review, String backGroundPic, Category category, String hashtagName){
         Hashtag hashtagToAdd = new Hashtag(hashtagName);
         hashtagStorage.addHashtag(hashtagToAdd);
-        Review reviewToAdd = new Review(make, model, year, review, "", category, hashtagToAdd);
+        Review reviewToAdd = new Review(make, model, year, review, backGroundPic, category, hashtagToAdd);
         reviewStorage.addReview(reviewToAdd);
         return "redirect:/categories/" + category.getName();
     }
