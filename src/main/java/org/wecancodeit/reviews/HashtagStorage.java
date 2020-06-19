@@ -17,4 +17,8 @@ private HashtagRepository hashtagRepo;
     public Hashtag findHashtagByHashtagName(String hashtagName) {
         return hashtagRepo.findByHashtagName(hashtagName);
     }
+
+    public void addHashtag(Hashtag hashtagToAdd) {
+        hashtagRepo.save(hashtagToAdd);
+    }
 }

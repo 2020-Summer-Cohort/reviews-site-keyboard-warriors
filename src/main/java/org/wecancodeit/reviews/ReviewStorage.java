@@ -21,4 +21,8 @@ public class ReviewStorage {
     public Iterable <Review> findAllReviews(){
         return reviewRepo.findAll();
     }
+
+    public void addReview(Review review){
+        reviewRepo.save(review);
+    }
 }

@@ -12,10 +12,12 @@ import java.util.Map;
 
 @Controller
 public class ReviewController {
+    HashtagStorage hashtagStorage;
     ReviewStorage reviewStorage;
 
-    public ReviewController(ReviewStorage reviewStorage) {
+    public ReviewController(ReviewStorage reviewStorage, HashtagStorage hashtagStorage) {
         this.reviewStorage = reviewStorage;
+        this.hashtagStorage = hashtagStorage;
     }
 
     @GetMapping("reviews/{reviewName}")
@@ -25,11 +27,13 @@ public class ReviewController {
     }
 
     //now we need to add method to review storage class
-    @PostMapping("reviews/add")
-    public String addReview(String make, String model, int year,  String review, String backGroundPic, Category category, Hashtag... hashtags){
-        Review reviewToAdd = new Review(make, model, year, review, "", category, hashtags);
+    @PostMapping("/categories/review/add")
+    public String addReview(String make, String model, int year,  String review, String backGroundPic, Category category, String hashtagName){
+        Hashtag hashtagToAdd = new Hashtag(hashtagName);
+        hashtagStorage.addHashtag(hashtagToAdd);
+        Review reviewToAdd = new Review(make, model, year, review, "", category, hashtagToAdd);
         reviewStorage.addReview(reviewToAdd);
-        return "redirect:/";
+        return "redirect:/categories/" + category.getName();
     }
 }
 

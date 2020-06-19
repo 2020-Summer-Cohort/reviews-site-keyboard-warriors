@@ -23,9 +23,6 @@
             Pilot Review</a></li>
     </ul>
     <form action="review/add" method="POST" class="new-review-form">
-        <label for="new-review__title-input" class="form__label">Review Title</label>
-        <input type="text" name="reviewTitle" id="new-review__title-input">
-        <br>
         <label for="new-review__year-input" class="form__label">Year</label>
         <input type="text" name="year" id="new-review__year-input">
         <br>
@@ -36,11 +33,12 @@
         <input type="text" name="model" id="new-review__model-input">
         <br>
         <label for="new-review__hashtag-input" class="form__label">Hashtag</label>
-        <input type="text" name="hashtag" id="new-review__hashtag-input">
+        <input type="text" name="hashtagName" id="new-review__hashtag-input">
         <br>
         <label for="new-review__body-input" class="form__label">Review</label>
-        <input type="text" name="reviewBody" id="new-review__body-input">
+        <input type="text" name="review" id="new-review__body-input" min="10" max="100">
         <br>
+        <input type="hidden" name="category" id="" th:value="${category.id}">
         <button class="btn" type="submit">Submit</button>
     </form>
 </div>
