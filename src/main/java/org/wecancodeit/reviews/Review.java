@@ -20,6 +20,8 @@ public class Review {
     private Category category;
     @ManyToMany
     private Collection<Hashtag> hashtags;
+    @OneToMany(mappedBy = "review")
+    private Collection<UserComment> userComments;
 
     protected Review(){}
 
@@ -85,7 +87,7 @@ public class Review {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, make, model, year, review, backGroundPic, category);
+        return Objects.hash(id, make, model, year, review, backGroundPic, category, userComments);
     }
 
     @Override
@@ -98,7 +100,11 @@ public class Review {
                 ", review='" + review + '\'' +
                 ", backGroundPic='" + backGroundPic + '\'' +
                 ", category=" + category +
-                ", hashtags=" + hashtags +
+                ", userComments=" + userComments +
                 '}';
+    }
+
+    public Collection<UserComment> getUserComments() {
+        return userComments;
     }
 }

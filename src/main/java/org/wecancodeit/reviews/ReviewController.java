@@ -14,10 +14,12 @@ import java.util.Map;
 public class ReviewController {
     HashtagStorage hashtagStorage;
     ReviewStorage reviewStorage;
+    UserCommentStorage userCommentStorage;
 
-    public ReviewController(ReviewStorage reviewStorage, HashtagStorage hashtagStorage) {
+    public ReviewController(ReviewStorage reviewStorage, HashtagStorage hashtagStorage, UserCommentStorage userCommentStorage) {
         this.reviewStorage = reviewStorage;
         this.hashtagStorage = hashtagStorage;
+        this.userCommentStorage = userCommentStorage;
     }
 
     @GetMapping("reviews/{reviewName}")
@@ -34,6 +36,12 @@ public class ReviewController {
         Review reviewToAdd = new Review(make, model, year, review, backGroundPic, category, hashtagToAdd);
         reviewStorage.addReview(reviewToAdd);
         return "redirect:/categories/" + category.getName();
+    }
+    @PostMapping("/review/addComment")
+    public String addComment(String userComment, Review review){
+        UserComment commentToAdd = new UserComment(userComment, review);
+        userCommentStorage.addComment(commentToAdd);
+        return "redirect:/reviews/"+review.getMake();
     }
 }
 

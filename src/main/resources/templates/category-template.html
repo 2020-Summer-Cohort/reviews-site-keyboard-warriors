@@ -23,6 +23,7 @@
             Pilot Review</a></li>
     </ul>
     <form action="review/add" method="POST" class="new-review-form">
+        <div class="input-align">
         <label for="new-review__year-input" class="form__label">Year</label>
         <input type="text" name="year" id="new-review__year-input">
         <br>
@@ -40,6 +41,7 @@
         <br>
         <label for="new-review__backgroundpic-input" class="form__label">Background Picture URL</label>
         <input type="text" name="backGroundPic" id="new-review__backgroundpic-input">
+        </div>
         <br>
         <input type="hidden" name="category" id="" th:value="${category.id}">
         <button class="btn" type="submit">Submit</button>

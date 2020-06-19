@@ -88,3 +88,26 @@ label{
 .btn{
     margin-top: 10px;
 }
+
+.input-align input{
+margin-left: 20em;
+
+}
+
+.input-align label {
+    position: absolute;
+    
+    }
+.comment{
+    color: white;
+    font-size: large;
+    
+}
+
+ul.comment {
+    list-style: none;    
+}
+
+.comment-input-align input{
+    margin-left: 5em;
+}

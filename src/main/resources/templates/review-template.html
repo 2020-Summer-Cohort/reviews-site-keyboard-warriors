@@ -1,33 +1,39 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keyboard-Warriors Car Reviews</title>
     <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="../CSS/styles.css" type="text/css"/>
-</head>
-<body th:style="'background:url('+ ${review.backGroundPic}+');background-size:100%;'" >
-<div class="container">
-    <header>
+    <link rel="stylesheet" href="../CSS/styles.css" type="text/css" />
+  </head>
+  <body
+    th:style="'background:url('+ ${review.backGroundPic}+');background-size:100%;'"
+  >
+    <div class="container">
+      <header>
         <h1>Keyboard-Warriors Car Reviews</h1>
         <a href="/">Home</a>
-    </header>
-    <h2 th:text="${review.make} + ' ' + ${review.model} + ' Review'">Honda Pilot Review</h2>
-    <h3 th:text="'Year: ' + ${review.year}">Year: 2020</h3>
-    <h3 th:text="'Make: ' + ${review.make}">Make: Honda</h3>
-    <h3 th:text="'Model: ' + ${review.model}">Model: Pilot</h3>
-    <h3>Hashtags: </h3>
-    <ul>
+      </header>
+      <h2 th:text="${review.make} + ' ' + ${review.model} + ' Review'">
+        Honda Pilot Review
+      </h2>
+      <h3 th:text="'Year: ' + ${review.year}">Year: 2020</h3>
+      <h3 th:text="'Make: ' + ${review.make}">Make: Honda</h3>
+      <h3 th:text="'Model: ' + ${review.model}">Model: Pilot</h3>
+      <h3>Hashtags:</h3>
+      <ul>
         <li th:each="hashtag: ${review.hashtags}">
-            <a th:text="'#' + ${hashtag.hashtagName}" th:href="@{'/hashtags/' + ${hashtag.hashtagName}}"></a>
+          <a
+            th:text="'#' + ${hashtag.hashtagName}"
+            th:href="@{'/hashtags/' + ${hashtag.hashtagName}}"
+          ></a>
         </li>
-    </ul>
-    <p th:text="${review.review}">
+      </ul>
+      <p th:text="${review.review}">
         You have more choices than ever for a three-row midsize SUV, yet the
         Honda Pilot, a mainstay of the class, remains one of the best choices
         available. You'll enjoy roomy seating for up to eight, a quiet interior
@@ -36,8 +42,31 @@
         capable when driven on twisty roads. And while we're not totally
         enamored with the optional nine-speed automatic transmission, there's no
         doubt the standard V6 has plenty of power to move this large crossover.
-    </p>
-
-</div>
-</body>
+      </p>
+      <h3>User Comments:</h3>
+      <ul class="comment" th:each="comment: ${review.userComments}">
+        <li th:text="${comment.userComments}"></li>
+      </ul>
+      <form
+        action="/review/addComment"
+        method="POST"
+        class="new-userComment-form"
+      >
+        <div class="comment-input-align">
+          <label for="new-userComment__input" class="form__label"
+            >Your Comment</label
+          >
+          <input
+            class="comment-txt"
+            type="text"
+            name="userComment"
+            id="new-userComment__input"
+          />
+          <input type="hidden" name="review" id="" th:value="${review.id}" />
+        </div>
+        <br />
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
 </html>
