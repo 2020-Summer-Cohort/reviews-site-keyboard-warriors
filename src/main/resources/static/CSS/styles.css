@@ -91,7 +91,7 @@ label{
 
 .input-align input{
 margin-left: 20em;
-
+border-radius: 5px;
 }
 
 .input-align label {
@@ -110,4 +110,12 @@ ul.comment {
 
 .comment-input-align input{
     margin-left: 5em;
+}
+
+.textbox-id{
+    height:200px;
+    text-align: left;
+    margin-left: 20em;
+    margin-top: 1em;
+    border-radius: 5px;
 }
