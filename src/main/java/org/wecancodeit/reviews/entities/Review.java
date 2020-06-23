@@ -1,4 +1,4 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;

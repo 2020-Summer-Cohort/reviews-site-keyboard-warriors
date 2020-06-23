@@ -1,8 +1,8 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.storage;
 
 import org.springframework.stereotype.Service;
-
-import java.util.*;
+import org.wecancodeit.reviews.storage.repositories.CategoryRepository;
+import org.wecancodeit.reviews.entities.Category;
 
 @Service
 public class CategoryStorage {

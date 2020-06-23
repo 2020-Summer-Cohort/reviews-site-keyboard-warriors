@@ -1,14 +1,18 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.wecancodeit.reviews.storage.HashtagStorage;
+import org.wecancodeit.reviews.storage.ReviewStorage;
+import org.wecancodeit.reviews.storage.UserCommentStorage;
+import org.wecancodeit.reviews.entities.Category;
+import org.wecancodeit.reviews.entities.Hashtag;
+import org.wecancodeit.reviews.entities.Review;
+import org.wecancodeit.reviews.entities.UserComment;
 
 @Controller
 public class ReviewController {
@@ -30,18 +34,30 @@ public class ReviewController {
 
     //now we need to add method to review storage class
     @PostMapping("/categories/review/add")
-    public String addReview(String make, String model, int year,  String review, String backGroundPic, Category category, String hashtagName){
+    public String addReview(String make, String model, int year, String review, String backGroundPic, Category category, String hashtagName) {
         Hashtag hashtagToAdd = new Hashtag(hashtagName);
         hashtagStorage.addHashtag(hashtagToAdd);
         Review reviewToAdd = new Review(make, model, year, review, backGroundPic, category, hashtagToAdd);
         reviewStorage.addReview(reviewToAdd);
         return "redirect:/categories/" + category.getName();
     }
+
     @PostMapping("/review/addComment")
-    public String addComment(String userComment, Review review){
+    public String addComment(String userComment, Review review) {
         UserComment commentToAdd = new UserComment(userComment, review);
         userCommentStorage.addComment(commentToAdd);
-        return "redirect:/reviews/"+review.getMake();
+        return "redirect:/reviews/" + review.getMake();
     }
+
+    @DeleteMapping("/categories/review/delete")
+    public String removeReview(Review review){
+        reviewStorage.deleteAReview(review);
+        return "redirect:/";
+        }
+    @PostMapping("/reviews/addHashTag/{reviewID}")
+    public String addHashTagToReview(@PathVariable long reviewID, Model model){
+
+    }
+
 }
 

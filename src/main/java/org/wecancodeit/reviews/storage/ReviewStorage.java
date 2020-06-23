@@ -1,9 +1,8 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.storage;
 
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.wecancodeit.reviews.storage.repositories.ReviewRepository;
+import org.wecancodeit.reviews.entities.Review;
 
 @Service
 public class ReviewStorage {
@@ -24,5 +23,9 @@ public class ReviewStorage {
 
     public void addReview(Review review){
         reviewRepo.save(review);
+    }
+
+    public void deleteAReview(Review review) {
+        reviewRepo.delete(review);
     }
 }

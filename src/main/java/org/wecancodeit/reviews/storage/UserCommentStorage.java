@@ -1,6 +1,8 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.storage;
 
 import org.springframework.stereotype.Service;
+import org.wecancodeit.reviews.storage.repositories.UserCommentRepository;
+import org.wecancodeit.reviews.entities.UserComment;
 
 @Service
 public class UserCommentStorage {
