@@ -107,4 +107,8 @@ public class Review {
     public Collection<UserComment> getUserComments() {
         return userComments;
     }
+
+    public void addHashtag(Hashtag hashtagToAdd) {
+        hashtags.add(hashtagToAdd);
+    }
 }

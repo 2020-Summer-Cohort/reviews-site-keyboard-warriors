@@ -33,6 +33,14 @@
           ></a>
         </li>
       </ul>
+      <form action="/reviews/addHashtag" method="post">
+      <input type="text" name="hashtagName" id="Add_a_Hashtag">
+      <input type="hidden" th:value = "${review.make}" name="reviewMake">
+       <button>Add a Hashtag</button>
+      
+      </form>
+
+
       <p th:text="${review.review}">
         You have more choices than ever for a three-row midsize SUV, yet the
         Honda Pilot, a mainstay of the class, remains one of the best choices
@@ -68,10 +76,10 @@
         <button class="btn" type="submit">Submit A Comment</button> 
         <!-- <button class="btn" type="submit">Update Review</button> -->
         </form>
-      <!-- <form action="/categories/review/delete" method="RequestMethod.DELETE,RequestMethod.GET">
+      <form action="/categories/review/delete" method="POST">
       <input type="hidden" name="review" id="" th:value="${review.id}">
       <button class="btn" type="submit">Delete Review</button> 
-      </form> -->
+      </form>
       <form action="" method="post"></form>
     </div>
   </body>

@@ -49,15 +49,23 @@ public class ReviewController {
         return "redirect:/reviews/" + review.getMake();
     }
 
-    @DeleteMapping("/categories/review/delete")
+    @PostMapping("/categories/review/delete")
     public String removeReview(Review review){
         reviewStorage.deleteAReview(review);
         return "redirect:/";
         }
-    @PostMapping("/reviews/addHashTag/{reviewID}")
-    public String addHashTagToReview(@PathVariable long reviewID, Model model){
-
+    @PostMapping("/reviews/addHashtag")
+    public String addHashTagToReview(String reviewMake, String hashtagName){
+    Hashtag hashtagToAdd = new Hashtag(hashtagName);
+    hashtagStorage.addHashtag(hashtagToAdd);
+    Review review = reviewStorage.findReviewByMake(reviewMake);
+    review.addHashtag(hashtagToAdd);
+    reviewStorage.addReview(review);
+    return "redirect:/reviews/" + reviewMake;
     }
 
 }
 
+//need to know the name of ht
+//name or id of review
+//
