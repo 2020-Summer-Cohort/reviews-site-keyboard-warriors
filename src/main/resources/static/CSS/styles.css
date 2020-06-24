@@ -86,12 +86,20 @@ label{
     color: white;
 }
 .btn{
-    margin-top: 10px;
+    display: inline;
+    margin-top: auto;
+}
+
+input {
+    border-radius: 5px;
+font-family: 'Montserrat', sans-serif;
 }
 
 .input-align input{
 margin-left: 20em;
 border-radius: 5px;
+font-family: 'Montserrat', sans-serif;
+
 }
 
 .input-align label {
@@ -118,6 +126,7 @@ ul.comment {
     margin-left: 20em;
     margin-top: 1em;
     border-radius: 5px; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav {
@@ -128,5 +137,5 @@ ul.comment {
 .inline{
     display: inline;
     padding: 8px;
-    background-color:crimson;
+    /* background-color:crimson; */
 }

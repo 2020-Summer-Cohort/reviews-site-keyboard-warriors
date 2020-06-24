@@ -56,6 +56,13 @@ public class ReviewController {
         }
     @PostMapping("/reviews/addHashtag")
     public String addHashTagToReview(String reviewMake, String hashtagName){
+        if (hashtagStorage.findHashtagByHashtagName(hashtagName) != null) {
+            Hashtag hashtagToAdd = hashtagStorage.findHashtagByHashtagName(hashtagName);
+            Review review = reviewStorage.findReviewByMake(reviewMake);
+            review.addHashtag(hashtagToAdd);
+            reviewStorage.addReview(review);
+            return "redirect:/reviews/" + reviewMake;
+        }
     Hashtag hashtagToAdd = new Hashtag(hashtagName);
     hashtagStorage.addHashtag(hashtagToAdd);
     Review review = reviewStorage.findReviewByMake(reviewMake);
@@ -65,7 +72,3 @@ public class ReviewController {
     }
 
 }
-
-//need to know the name of ht
-//name or id of review
-//
